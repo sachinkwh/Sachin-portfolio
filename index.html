@@ -1,0 +1,341 @@
+<!DOCTYPE html>  <html lang="en">  
+<head>  
+  <meta charset="UTF-8" />  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />  
+  <title>Sachin Kushwaha | Portfolio</title>  
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet" />  
+  <style>  
+    * {  
+      margin: 0;  
+      padding: 0;  
+      box-sizing: border-box;  
+      font-family: 'Poppins', sans-serif;  
+    }  html { scroll-behavior: smooth; }  
+
+body {  
+  background: #121212;  
+  color: #e0e0e0;  
+  line-height: 1.6;  
+}  
+
+/* Navbar */  
+.navbar {  
+  position: fixed;  
+  top: 0;  
+  width: 100%;  
+  background: rgba(18, 18, 18, 0.95);  
+  backdrop-filter: blur(10px);  
+  padding: 1rem 2rem;  
+  z-index: 1000;  
+  display: flex;  
+  justify-content: space-between;  
+  align-items: center;  
+}  
+
+.navbar h1 {  
+  font-size: 1.5rem;  
+  color: #00bcd4;  
+}  
+
+.navbar ul {  
+  list-style: none;  
+  display: flex;  
+  gap: 2rem;  
+}  
+
+.navbar a {  
+  color: #e0e0e0;  
+  text-decoration: none;  
+  font-size: 1rem;  
+  transition: color 0.3s ease;  
+}  
+
+.navbar a:hover {  
+  color: #00bcd4;  
+}  
+
+/* Hero Section */  
+.hero {  
+  height: 100vh;  
+  display: flex;  
+  flex-direction: column;  
+  justify-content: center;  
+  align-items: center;  
+  text-align: center;  
+  padding: 2rem;  
+  background: linear-gradient(135deg, #121212 0%, #1a1a1a 100%);  
+}  
+
+.hero img {  
+  width: 180px;  
+  height: 180px;  
+  object-fit: cover;  
+  border-radius: 50%;  
+  border: 4px solid #00bcd4;  
+  margin-bottom: 1.5rem;  
+  animation: fadeIn 1s ease-in;  
+  box-shadow: 0 0 25px rgba(0, 188, 212, 0.4);  
+}  
+
+.hero h1 {  
+  font-size: 2.5rem;  
+  margin-bottom: 0.5rem;  
+  color: #fff;  
+}  
+
+.hero .title {  
+  font-size: 1.2rem;  
+  color: #00bcd4;  
+  overflow: hidden;  
+  white-space: nowrap;  
+  border-right: 3px solid #00bcd4;  
+  animation: typing 3s steps(40, end) infinite, blink 0.75s step-end infinite;  
+}  
+
+/* Sections */  
+section {  
+  padding: 5rem 2rem;  
+  max-width: 1200px;  
+  margin: 0 auto;  
+}  
+
+section h2 {  
+  font-size: 2rem;  
+  margin-bottom: 2rem;  
+  color: #00bcd4;  
+  position: relative;  
+  display: inline-block;  
+}  
+
+section h2::after {  
+  content: '';  
+  position: absolute;  
+  bottom: -5px;  
+  left: 0;  
+  width: 50%;  
+  height: 3px;  
+  background: #00bcd4;  
+  transition: width 0.3s ease;  
+}  
+
+section h2:hover::after {  
+  width: 100%;  
+}  
+
+.about p {  
+  font-size: 1.1rem;  
+  max-width: 700px;  
+  margin: 0 auto 1.5rem;  
+  opacity: 0;  
+  animation: slideUp 1s ease forwards;  
+  animation-delay: 0.2s;  
+}  
+
+.skills {  
+  display: flex;  
+  flex-wrap: wrap;  
+  gap: 1rem;  
+  justify-content: center;  
+}  
+
+.skills span {  
+  background: #222;  
+  padding: 0.8rem 1.5rem;  
+  border-radius: 25px;  
+  font-size: 1rem;  
+  color: #fff;  
+  transition: transform 0.3s ease, background 0.3s ease;  
+  cursor: default;  
+}  
+
+.skills span:hover {  
+  transform: translateY(-5px);  
+  background: #00bcd4;  
+  color: #000;  
+}  
+
+.projects {  
+  display: grid;  
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));  
+  gap: 2rem;  
+}  
+
+.project-card {  
+  background: #1a1a1a;  
+  padding: 1.5rem;  
+  border-radius: 10px;  
+  transition: transform 0.3s ease, box-shadow 0.3s ease;  
+  text-align: center;  
+}  
+
+.project-card h3 {  
+  font-size: 1.2rem;  
+  margin-bottom: 0.5rem;  
+  color: #fff;  
+}  
+
+.project-card p {  
+  font-size: 0.9rem;  
+  color: #b0b0b0;  
+}  
+
+.project-card:hover {  
+  transform: translateY(-10px);  
+  box-shadow: 0 10px 20px rgba(0, 188, 212, 0.2);  
+}  
+
+.contact p {  
+  font-size: 1.1rem;  
+  margin-bottom: 1rem;  
+}  
+
+.contact a {  
+  color: #00bcd4;  
+  text-decoration: none;  
+  transition: color 0.3s ease;  
+}  
+
+.contact a:hover {  
+  color: #fff;  
+}  
+
+form {  
+  max-width: 600px;  
+  margin: 2rem auto;  
+}  
+
+input, textarea {  
+  width: 100%;  
+  padding: 0.8rem;  
+  margin: 0.5rem 0;  
+  background: #222;  
+  border: 1px solid #333;  
+  color: #fff;  
+  border-radius: 5px;  
+  transition: border-color 0.3s ease;  
+}  
+
+input:focus, textarea:focus {  
+  outline: none;  
+  border-color: #00bcd4;  
+}  
+
+textarea { resize: vertical; }  
+
+button {  
+  padding: 0.8rem 2rem;  
+  background: #00bcd4;  
+  color: #000;  
+  border: none;  
+  border-radius: 5px;  
+  cursor: pointer;  
+  transition: background 0.3s ease, transform 0.3s ease;  
+}  
+
+button:hover {  
+  background: #008c9e;  
+  transform: translateY(-3px);  
+}  
+
+footer {  
+  text-align: center;  
+  background: #111;  
+  padding: 1.5rem;  
+  font-size: 0.9rem;  
+  color: #b0b0b0;  
+}  
+
+@keyframes fadeIn {  
+  from { opacity: 0; transform: scale(0.8); }  
+  to { opacity: 1; transform: scale(1); }  
+}  
+
+@keyframes slideUp {  
+  from { opacity: 0; transform: translateY(20px); }  
+  to { opacity: 1; transform: translateY(0); }  
+}  
+
+@keyframes typing {  
+  from { width: 0; }  
+  to { width: 100%; }  
+}  
+
+@keyframes blink {  
+  50% { border-color: transparent; }  
+}  
+
+@media (max-width: 768px) {  
+  .hero h1 { font-size: 2rem; }  
+  .hero .title { font-size: 1rem; }  
+  .navbar ul { gap: 1rem; }  
+  section { padding: 3rem 1rem; }  
+  .projects { grid-template-columns: 1fr; }  
+}
+.go-top {
+  </style>  
+</head>  
+<body>  
+<a id="top"></a>
+  <nav class="navbar">  
+    <h1>Sachin Kushwaha</h1>  
+    <ul>  
+      <li><a href="#about">About</a></li>  
+      <li><a href="#skills">Skills</a></li>  
+      <li><a href="#projects">Projects</a></li>  
+      <li><a href="#contact">Contact</a></li>  
+    </ul>  
+  </nav>    <section class="hero">  
+    <img src="sachin.jpg" alt="Sachin Kushwaha" />  
+    <h1><i>Sachin Kushwaha</i></h1>  
+    <p class="title">Computer Science Student | Web Developer</p>  
+  </section>    <section id="about" class="about">  
+    <h2>About Me</h2>  
+    <p>My name is <strong><mark>Sachin Kushwaha</mark></strong>, a passionate Computer Science student at <strong>GPL Collage</strong>. I specialize in front-end web development, with a keen interest in creating visually appealing, responsive, and user-friendly websites.</p>  
+    <p>I have expertise in <strong>HTML</strong>, <strong>CSS</strong>, <strong>JavaScript</strong>, and <strong>PHP</strong>. I enjoy building creative projects such as animated interfaces, calculators, landing pages, and personal portfolios.</p>  
+    <p>Beyond coding, I love video games like <strong><mark>Free Fire</mark></strong>, learning UI design trends, and connecting with the developer community. I’m always open to learning new things and improving my craft.</p>  
+  </section>    <section id="skills" class="skills">  
+    <h2>Skills</h2>  
+    <div class="skills">  
+      <span>HTML</span>  
+      <span>CSS</span>  
+      <span>JavaScript</span>  
+      <span>PHP</span>  
+    </div>  
+  </section>    <section id="projects" class="projects">  
+    <h2>Projects</h2>  
+    <div class="projects">  
+      <div class="project-card">  
+        <h3>Personal Portfolio Website</h3>  
+        <p>A responsive portfolio showcasing my skills and projects.</p>  
+      </div>  
+      <div class="project-card">  
+        <h3>Animated Solar System</h3>  
+        <p>An interactive HTML and CSS-based solar system animation.</p>  
+      </div>  
+      <div class="project-card">  
+        <h3>JavaScript Calculator</h3>  
+        <p>A functional calculator built with JavaScript.</p>  
+      </div>  
+      <div class="project-card">  
+        <h3>Responsive Landing Page</h3>  
+        <p>A modern landing page with responsive design.</p>  
+      </div>  
+    </div>  
+  </section>    <section id="contact" class="contact">  
+    <h2>Contact</h2>  
+    <p>Email: <a href="mailto:sachinkushwaha5152@gmail.com">sachinkushwaha5152@gmail.com</a></p>  
+    <p>Instagram: <a href="https://instagram.com/Sachin_kwh07" target="_blank">@Sachin_kwh07</a></p>  
+    <p>Facebook: <a href="https://www.facebook.com/profile.php?id=100056750171580" target="_blank">Sachin Kushwaha</a></p>  
+    <form action="contact.php" method="POST">  
+      <input type="text" name="name" placeholder="Your Name" required />  
+      <input type="email" name="email" placeholder="Your Email" required />  
+      <textarea name="message" rows="5" placeholder="Your Message" required></textarea>  
+      <button type="submit">Send Message</button>  
+    </form>  
+  </section>    <footer>  
+    <!-- Go to Top Button -->
+  <a href="#top" class="go-top"><b>⬆ Go to Top</a></b>
+    <p>&copy; 2025 Sachin Kushwaha. All rights reserved.</p>  
+  </footer>  
+</body>  
+</html>
